@@ -1,0 +1,78 @@
+baseurl = "/"
+relativeURLs = true
+languageCode = "pl-pl"
+defaultContentLanguage = "pl"
+theme = "terminal"
+paginate = 5
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\\.md$"]
+summaryLength = 20
+
+[params]
+  # dir name of your main content (default is `content/posts`).
+  # the list of set content will show up on your index page (baseurl).
+  contentTypeName = "post"
+
+  # ["orange", "blue", "red", "green", "pink"]
+  themeColor = "orange"
+
+  # if you set this to 0, only submenu trigger will be visible
+  showMenuItems = 5
+
+  # show selector to switch language
+  showLanguageSelector = false
+
+  # set theme to full screen width
+  fullWidthTheme = false
+
+  # center theme with default width
+  centerTheme = true
+
+  # set a custom favicon (default is a `themeColor` square)
+  favicon = "img/favicon/favicon.ico"
+
+  # set post to show the last updated
+  # If you use git, you can set `enableGitInfo` to `true` and then post will automatically get the last updated
+  showLastUpdated = true
+  # Provide a string as a prefix for the last update date. By default, it looks like this: 2020-xx-xx [Updated: 2020-xx-xx] :: Author
+  updatedDatePrefix = "Edycja"
+
+  # set all headings to their default size (depending on browser settings)
+  # it's set to `true` by default
+  # oneHeadingSize = false
+
+[params.twitter]
+  # set Twitter handles for Twitter cards
+  # see https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started#card-and-content-attribution
+  # do not include @
+  creator = ""
+  site = ""
+
+[languages]
+
+  [languages.pl]
+    languageName = "Polski"
+    title = "CPDoc"
+    subtitle = "Repozytorium dokumentów dla CP"
+    owner = "TWJ"
+    keywords = "CP, TWJ, R"
+    copyright = "TWJ"
+    menuMore = "Pokaż więcej"
+    readMore = "Czytaj więcej"
+    readOtherPosts = "Czytaj inne posty"
+    missingContentMessage = "Strona nie znaleziona..."
+    missingBackButtonLabel = "Powrót do strony startowej"
+
+    [languages.pl.params.logo]
+      logoText = "CPDoc"
+      logoHomeLink = "/"
+
+    [languages.pl.menu]
+      [[languages.pl.menu.main]]
+        identifier = "dlaczego"
+        name = "Dlaczego"
+        url = "/dlaczego"
+      [[languages.pl.menu.main]]
+        identifier = "DON'T PANIC"
+        name = "DON'T PANIC"
+        url = "/dont-panic"
+
