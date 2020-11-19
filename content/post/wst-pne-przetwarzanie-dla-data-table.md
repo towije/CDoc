@@ -25,14 +25,14 @@ Tutaj wczytamy cały zbiór i wykonamy przekształcenia dla całości. W przypad
 Najpierw ustawiamy ```locale``` na angielskie. Funkcje tekstowe często oparte sa na nastawach narodowych. Następnie ładujemy bibliotekę do szybkich operacji na zbiorach danych.
 
 
-```r
+{{< code language="r" title="Środowisko, dane i zmienne" >}}
 Sys.setlocale("LC_ALL","English")
 library(data.table)
 file_name<-"lowicz_from201908250000_to202008242359_exportedAt202008241255.csv"
 data_set_name<-"lowicz"
 dir_name<-"data/DUMP SO/"
 encoding<-"UTF-8"
-```
+{{< /code >}}
 
 ### Nazwy zmiennych
 

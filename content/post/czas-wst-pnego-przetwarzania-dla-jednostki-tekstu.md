@@ -24,13 +24,13 @@ tags: [preprocessing, R]
 Średnio w komentarzu pojawia się 25 znaczących słów. 30 wszystkich.
 Wybierzmy sobie zupełnie dowolny przypadek spełniający to założenie.
 
-```r
+{{< code language="r" title="Biblioteka, dane, zmienne" >}}
 library(data.table)
 load("data/DUMP SO/fruktus137.RData")
 load("stopwords_pl.RData")
 txt <- fruktus[137, Tresc.wypowiedzi]
 print(txt)
-```
+{{< /code >}}
 
 ```
 ## [1] "Nie jestes zadnym doktorem, ale draniem i glupcem. Dobrze wiesz ilu twoich kolegów i kolezanek po fachu jest banowanych i szykanowanych za demaskowanie klamstw dotyczacych tej fake-epidemii a ty szmato bierzesz udzial w kreowaniu tej psychozy.\nTfu!!!"
