@@ -44,7 +44,7 @@ Na wejściu podajemy, a na wyjściu dostajemy jeden łańcuch tekstowy. Nie wekt
 make_corpus("Nie jestes zadnym doktorem, ale draniem i glupcem. Dobrze wiesz ilu twoich kolegów i kolezanek po fachu jest banowanych i szykanowanych za demaskowanie klamstw dotyczacych tej fake-epidemii a ty szmato bierzesz udzial w kreowaniu tej psychozy.\nTfu!!!")
 {{< /code >}}
 
-{{< code language="r" title="Wynik" >}}
+{{< code language="r" title="Wynik">}}
 ## [1] "jestes zadnym doktorem draniem glupcem wiesz ilu twoich kolegow kolezanek fachu banowanych szykanowanych demaskowanie klamstw dotyczacych fake epidemii szmato bierzesz udzial kreowaniu psychozy tfu"
 {{< /code >}}
 

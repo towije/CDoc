@@ -40,9 +40,9 @@ Urocze i na temat.
 
 #### Na małe litery.
 
-```r
+{{< code language="r" title="" >}}
 system.time(txt <- tolower(txt))
-```
+{{< /code >}}
 
 ```
 ##    user  system elapsed 
@@ -51,9 +51,9 @@ system.time(txt <- tolower(txt))
 
 #### Tylko litery
 
-```r
+{{< code language="r" title="" >}}
 system.time(txt <- gsub("[^abcdefghijklmnopqrstuvwxyzęćółąćśżźń]", " ", txt))
-```
+{{< /code >}}
 
 ```
 ##    user  system elapsed 
@@ -62,9 +62,9 @@ system.time(txt <- gsub("[^abcdefghijklmnopqrstuvwxyzęćółąćśżźń]", " "
 
 #### Bez 1 i 2 literowych
 
-```r
+{{< code language="r" title="" >}}
 system.time(txt<-gsub("\\b\\w{1,2}\\b", " ",txt))
-```
+{{< /code >}}
 
 ```
 ##    user  system elapsed 
@@ -72,7 +72,7 @@ system.time(txt<-gsub("\\b\\w{1,2}\\b", " ",txt))
 ```
 #### Bez stopwords
 
-```r
+{{< code language="r" title="" >}}
 system.time({
   txt <- paste0(" ", txt, " ")
   stopwords_pl <- paste0(" ", stopwords_pl, " ")
@@ -80,7 +80,7 @@ system.time({
     txt <- gsub(idx, " ", txt, fixed = T)
   }
 })
-```
+{{< /code >}}
 
 ```
 ##    user  system elapsed 
@@ -88,9 +88,9 @@ system.time({
 ```
 #### Bez nadmiarowych spacji
 
-```r
+{{< code language="r" title="" >}}
 system.time(txt<-gsub("\\s+", " ",txt))
-```
+{{< /code >}}
 
 ```
 ##    user  system elapsed 
@@ -99,7 +99,7 @@ system.time(txt<-gsub("\\s+", " ",txt))
 
 #### Wszystko razem
 
-```r
+{{< code language="r" title="" >}}
 txt <- fruktus[137, Tresc.wypowiedzi]
 system.time({
   txt <- tolower(txt)
@@ -112,7 +112,7 @@ system.time({
   }
   txt<-gsub("\\s+", " ",txt)
 })
-```
+{{< /code >}}
 
 ```
 ##    user  system elapsed 
@@ -123,7 +123,7 @@ Czasy przetwarzania sa tak małe, że interpreter nie jest w stanie ich zmierzy�
 
 ### 10K słów (czyli 333 razy więcej)
 
-```r
+{{< code language="r" title="" >}}
 txt <- rep(fruktus[137, Tresc.wypowiedzi],333)
 system.time({
   txt <- tolower(txt)
@@ -136,7 +136,7 @@ system.time({
   }
   txt<-gsub("\\s+", " ",txt)
 })
-```
+{{< /code >}}
 
 ```
 ##    user  system elapsed 
