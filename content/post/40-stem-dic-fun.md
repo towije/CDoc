@@ -96,6 +96,7 @@ Unit: milliseconds
 W wypowiedzi jest średnio 30 słów.
 
 {{< code language="r" title="Czas stemmingu dla 30 słów" >}}
+s30<-sample(1:length(tag1),30)
 microbenchmark(
   tag1s <- sapply(tag1[s30], stem)
 )

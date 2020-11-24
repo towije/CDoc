@@ -72,7 +72,10 @@ summaryLength = 20
         name = "Dlaczego"
         url = "/dlaczego"
       [[languages.pl.menu.main]]
-        identifier = "DON'T PANIC"
+        identifier = "Galaxy Song"
+        name = "Galaxy Song"
+        url = "/galaxy-song"
+      [[languages.pl.menu.main]]
+        identifier = "dont-panic"
         name = "DON'T PANIC"
         url = "/dont-panic"
-
