@@ -11,9 +11,11 @@ editor_options:
 chunk_output_type: inline
 slug: [stemming-R]
 categories: [Badanie]
-tags: [stemming, morfologik, R, benchmark]
+tags: [analiza emocjonalnych, analiza n-gramów, stemming, morfologik, R, benchmark]
 ---
 
+```Morfologik``` jest chyba jedynym i przede wszystkim bardzo udanym słownikiem stemmingowym dla języka polskiego.
+Jednak jego użycie w zastosowaniach masowych czy strumieniowych wymaga dużo większej sprawności, niż może zaoferować interpreter ```R```.
 
 ## Struktura słownika
 

@@ -4,8 +4,10 @@ author: Tomasz Jerzyński
 date: 2020-11-16
 slug: [counts-of-counts]
 categories: [Wejście]
-tags: [preprocessing, R, rozkład]
+tags: [analiza emocjonalnych, preprocessing, R, rozkład]
 ---
+
+Oszacowanie kształtu rozkładów występowania słów i fraz w danych.
 
 ## Tagi - jedno słowo
 

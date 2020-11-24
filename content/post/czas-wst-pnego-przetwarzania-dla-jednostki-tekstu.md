@@ -4,9 +4,10 @@ author: Tomasz Jerzyński
 date: '2020-11-13'
 slug: [preprocessing-time]
 categories: [Wejście]
-tags: [preprocessing, R]
+tags: [analiza emocjonalnych, preprocessing, R, benchmark]
 ---
 
+Szkicowa - nieoptymalna wersja wstępnego przetwarzania tekstu dla analizy słów emocjonalnych.    
 
 ## Czas przetwarzania
 

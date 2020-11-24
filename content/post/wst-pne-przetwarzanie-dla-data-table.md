@@ -11,14 +11,13 @@ editor_options:
 chunk_output_type: inline
 slug: [preprocessing-data-table]
 categories: [Wejście]
-tags: [preprocessing, R, data.table]
+tags: [analiza emocjonalnych, preprocessing, R, data.table]
 ---
-
-## Przekształcenia
 
 Wstępne przetwarzanie ma na celu unifikację oraz kompresję tekstu.
 Wykonujemy kilka standardowych przekształceń. W zależności od potrzeb możemy dodać inne lub usunąć któreś z istniejących. Większość z nich polega na zastąpieniu fragmentu tekstu znakiem odstępu.
 
+## Przekształcenia
 
 Tutaj wczytamy cały zbiór i wykonamy przekształcenia dla całości. W przypadku przetwarzania strumieniowego będziemy to robili dla pojedynczego wpisu, ale o tym dalej.
 

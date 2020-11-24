@@ -12,8 +12,10 @@ output:
     toc_float: true
 slug: [preprocessing-single]
 categories: [Wejście]
-tags: [preprocessing, R]
+tags: [analiza emocjonalnych, preprocessing, R]
 ---
+
+Optymalna wersja oczyszczania tekstu dla analizy słów emocjonalnych. Funkcja.
 
 Na początku ładujemy ```locale``` i ```stopwords_pl```.
 Raz przy starcie sesji.
