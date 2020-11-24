@@ -25,7 +25,7 @@ Tutaj wczytamy cały zbiór i wykonamy przekształcenia dla całości. W przypad
 Najpierw ustawiamy ```locale``` na angielskie. Funkcje tekstowe często oparte sa na nastawach narodowych. Następnie ładujemy bibliotekę do szybkich operacji na zbiorach danych.
 
 
-{{< code language="r" title="Środowisko, dane i zmienne" >}}
+{{< code language="r" title="Środowisko i zmienne" >}}
 Sys.setlocale("LC_ALL","English")
 library(data.table)
 file_name<-"lowicz_from201908250000_to202008242359_exportedAt202008241255.csv"
@@ -39,10 +39,10 @@ encoding<-"UTF-8"
 Wczytujemy dane do obiektu. Następnie ustawiamy nazwy. W nazwach mogą pojawiać się narodowe znaki diakrytyczne oraz całe spektrum przeróżnego śmiecia włącznie z kodami sterującymi. Teoretycznie może to działać, ale praktyka mówi, że pozostawienie tego to kłopoty.
 ```make.names``` doprowadzi nazwy do jedynie słusznej formy, usuwają wszelkie herezje. Stąd - między innymi - potrzebne były angielskie ```locale```, gdyby pozostały polskie, pozostały by także polskie znaki.
 
-```r
+{{< code language="r" title="Dane i nazwy" >}}
 data_set<-fread(paste0(dir_name,file_name),encoding = encoding)
 setnames(data_set,make.names(names(data_set)))
-```
+{{< /code >}}
 
 ### Data.table
 
