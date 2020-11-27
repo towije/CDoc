@@ -16,6 +16,8 @@ tags: [badanie, ankieta, analiza emocjonalnych, R]
 
 ---
 
+Odtworzenie analizy jakiej dokonali na swoich danych badacze z Nenckiego.
+
 {{< code language="r" title="Środowisko" >}}
 library(data.table)
 library(ggplot2)
