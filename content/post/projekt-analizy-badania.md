@@ -89,7 +89,11 @@ ggplot(dscm, aes(x = value, color = variable)) +
 
 ![Gęstość rozkładów odpowiedzi](/img/density-pab.png)<!-- -->
 
-Ocena danego słowa opiera się na bardzo prostym systemie szacowania dystansu euklidesowego między wektorami wzorcowymi, a wektorami otrzymanymi od respondentów. Przykładowo wektor wzorcowy szczęścia to ```(7,1,1,1,1)```. Respondent numer 1 odpowiedział, że dany obiekt kojarzy mu się bardzo z obrzydzeniem i tak sobie z cała resztą - jego wektor wygląda tak: ```(1,2,1,5,7)```. Zatem dystans danego obiektu według danego respondenta wynosi ```sqrt(sum(vector1 - vector2)^2) = 9.43```
+Ocena danego słowa opiera się na bardzo prostym systemie szacowania dystansu euklidesowego między wektorami wzorcowymi, 
+a wektorami otrzymanymi od respondentów. Przykładowo wektor wzorcowy szczęścia to ```(7,1,1,1,1)```. 
+Respondent numer 1 odpowiedział, że dany obiekt kojarzy mu się bardzo z obrzydzeniem i tak sobie z cała resztą - 
+jego wektor wygląda tak: ```(1,2,1,5,7)```. 
+Zatem dystans danego obiektu od szczęścia według danego respondenta wynosi ```sqrt(sum(vector1 - vector2)^2) = 9.43```
 
 {{< code language="r" title="Wektory wzorcowe dla poszczególnych emocji" >}}
 pure_h <- c(7, 1, 1, 1, 1) # for happiness,
@@ -150,4 +154,4 @@ data.table(
 ## 6:     dist_n 224.1478 1.221349 30
 {{< /code >}}
 
-Metoda jest banalna, ale jednocześnie bardzo efektywna.
+Metoda jest banalna, ale jednocześnie bardzo efektywna. 
