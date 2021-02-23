@@ -1,22 +1,16 @@
 ---
 title: "Podsumowanie badania CP Affective"
 subtitle: "Przetwarzanie surowego zbioru danych"
-author: Tomasz Jerzyński
-date: 2021-02-23
-output:
-  html_document:
-    highlight: "zenburn"
-    keep_md: true
-    toc: true
-    toc_float: true
-editor_options: 
-chunk_output_type: inline
-slug: [c-affective-dataset-summary]
+author: Tomasz Jerzyński date: 2021-02-23 output:
+html_document:
+highlight: "zenburn"
+keep_md: true toc: true toc_float: true editor_options:
+chunk_output_type: inline slug: [c-affective-dataset-summary]
 categories: [Badanie]
 tags: [analiza emocjonalnych, analiza n-gramów, R, sondaż]
 ---
 
-Przetwarzanie i sprawdzenie surowego zbioru danych. Plik tekstowy UTF-16, 
+Przetwarzanie i sprawdzenie surowego zbioru danych. Plik tekstowy UTF-16,
 234.2Mb.
 
 ## Ustawienia i wczytywanie funkcji pomocniczych
@@ -42,6 +36,7 @@ d1[1:10, 1:10]
 ##  9:  9 405974   29              13853     2    M   NA   NA   NA   NA
 ## 10: 10 288572   70              93363     2    F   NA   NA   NA   NA
 ```
+
 Zbiór został dostarczony w standardowej formie, gdzie w wierszach mamy
 respondentów a w kolumnach poszczególne odpowiedzi. Jest to nieoptymalna i
 nieodpowiednia forma dla tego typu zbioru danych.
@@ -50,15 +45,14 @@ nieodpowiednia forma dla tego typu zbioru danych.
 
 Na tym etapie nie ine interesują nas parametry respondentów.
 
-
 ```r
 d1 <- d1[, -(2:6)]
 ```
+
 ## Struktura braku informacji
 
-Każdy z respondentów  oceniał tylko około 100 słów. Dlatego surowy zbiór
-składa się głównie z pustych komórek.
-
+Każdy z respondentów oceniał tylko około 100 słów. Dlatego surowy zbiór składa
+się głównie z pustych komórek.
 
 ```r
 d1[1:10, 1:10]
@@ -77,11 +71,11 @@ d1[1:10, 1:10]
 ##  9:  9   NA   NA   NA   NA   NA   NA   NA   NA   NA
 ## 10: 10   NA   NA   NA   NA   NA   NA   NA   NA   NA
 ```
+
 ## Tworzymy długi zbiór
 
 Pierwszym etapem porządkowania będzie utworzenie zbioru, gdzie każdy wiersz
 będzie odpowiadał tylko jednej odpowiedzi respondenta.
-
 
 ```r
 d2 <- melt(d1, id.vars = "Id")
@@ -111,12 +105,12 @@ fen0(cells1)
 ```
 ## [1] "61,270,000"
 ```
+
 W surowym zbiorze mamy ``61,270,000`` komórek.
 
 ## Usuwamy puste komórki
 
-Ze zbioru w długiej fermie usuwamy puste wiersze nie zawierające odpowiedzi.
-
+Ze zbioru w długiej formie usuwamy puste wiersze nie zawierające odpowiedzi.
 
 ```r
 d2 <- d2[!is.na(value)]
@@ -146,8 +140,8 @@ fen0(cells2)
 ```
 ## [1] "1,221,455"
 ```
-W zbiorze pozostaje ``1,221,455`` wierszy zawierających odpowiedzi
-respondentów.
+
+W zbiorze pozostaje ``1,221,455`` wierszy zawierających odpowiedzi respondentów.
 
 Dane stanowiły jedynie niecałe ``2%``
 zbioru wyjściowego
@@ -156,7 +150,6 @@ zbioru wyjściowego
 
 Zbiór zawiera połączony identyfikator dla słowa i emocji. Dzielimy
 identyfikator "słowo_emocja" na osobne zmienne "słowo" i "emocja".
-
 
 ```r
 d2 <- d2[, c("word", "aff") := tstrsplit(variable, "_", fixed = TRUE)]
@@ -182,15 +175,16 @@ d2
 ## Tworzymy docelowy zbiór
 
 Docelowy zbiór w wierszach powinien odpowiadać poszczególnym słowom i
-identyfikatorom respondentów.
-W kolumnach powinny znajdować się oceny kolejnych emocji.
-
+identyfikatorom respondentów. W kolumnach powinny znajdować się oceny kolejnych
+emocji.
 
 ```r
 d3 <- dcast(d2, word + Id ~ aff)
 setnames(d3, tonames(names(d3)))
 d3
 ```
+
+Przy okazji wystandaryzowaliśmy nazwy zmiennych.
 
 ```
 ##         word   id x1 x2 x3 x4 x5
@@ -227,10 +221,12 @@ summary(d3)
 ##  3rd Qu.:4.000   3rd Qu.:4.000   3rd Qu.:4.000  
 ##  Max.   :7.000   Max.   :7.000   Max.   :7.000
 ```
+
+Wszystko się zgadza. Każda emocja ma oceny na skali 1-7.
+
 ## Podsumowanie
 
 Mamy łącznie ``244,291`` ocen.
-
 
 ```r
 t1 <- d3[, .N, word]
@@ -238,7 +234,7 @@ t1[, fr(ntil(N))]
 ```
 
 ```
-##              N      %
+## Liczba ocen  N      %
 ## [93,113]   403  20.15
 ## (113,119]  415  20.75
 ## (119,125]  445  22.25
@@ -247,15 +243,16 @@ t1[, fr(ntil(N))]
 ## Sum       2000 100.00
 ## NA's         0   0.00
 ```
-Średnio po ``122.1455``100 ocen na słowo.
+
+Średnio po ``122`` oceny na słowo.
 
 ## Opis zbioru
 
 ### Etykiety emocji
 
-Sprawdzamy, czy identyfikatory zawsze oznaczają te same emocje
+Sprawdzamy, czy identyfikatory zawsze oznaczają te same emocje.
 
-Wczytujemy etykiety z arkusza dostarczonego przez Ankieteo.
+Wczytujemy etykiety z arkusza dostarczonego przez *Ankieteo*.
 
 ```r
 labs <- data.table(
@@ -264,14 +261,14 @@ labs <- data.table(
     range = "a9:C10008", col_names = c("v1", "v2", "v3"))
 )
 ```
-Usuwamy niepotrzebną kolumnę.
 
+Usuwamy niepotrzebną kolumnę.
 
 ```r
 labs[, v2 := NULL]
 ```
-Usuwamy z tekstu etykiety wszystko poza nazwą emocji.
 
+Usuwamy z tekstu etykiety wszystko poza nazwą emocji.
 
 ```r
 labs[, v2 := gsub("^.* - ", "", v3)]
@@ -316,16 +313,16 @@ labs
 ##  9999:    Smutek
 ## 10000:    Wstręt
 ```
-Rozdzielamy identyfikator słowa od identyfikatora emocji.
 
+Rozdzielamy identyfikator słowa od identyfikatora emocji.
 
 ```r
 labs <- labs[, c("word", "aff") := tstrsplit(v1, "_", fixed = TRUE)]
 labs[, v1 := NULL]
 ```
-Zmieniamy typ identyfikatora emocji na liczbę całkowitą i liczymy jego
-średnią w grupach wydzielonych przez nazwy emocji.
 
+Zmieniamy typ identyfikatora emocji na liczbę całkowitą i liczymy jego średnią w
+grupach wydzielonych przez nazwy emocji.
 
 ```r
 labs[, aff := as.integer(aff)]
@@ -340,11 +337,11 @@ labs[, mean(aff), v2]
 ## 4:    Smutek  4
 ## 5:    Wstręt  5
 ```
+
 Wszystkie średnie pozostały liczbami całkowitymi, więc każdy identyfikator
 jednoznacznie określa jedną emocję.
 
 Nadajemy odpowiednie nazwy zmiennym.
-
 
 ```r
 setnames(d3, c("word", "id", "h", "a", "f", "s", "d"))
@@ -365,10 +362,10 @@ d3
 ## 244290: P999 6110 1 1 1 4 1
 ## 244291: P999 6126 4 7 6 4 6
 ```
+
 ### Etykiety słów
 
 Oddzielamy token z treści etykiety. Zmieniamy litery na małe.
-
 
 ```r
 labs[, v4 := str_extract(v3, "\".*\"")]
@@ -403,8 +400,7 @@ labs
 ## 10000:    Wstręt P2000   5      potęga
 ```
 
-Usuwamy ze zbioru zreplikowane wiersze.
-
+Usuwamy ze zbioru zreplikowane wiersze i zostawiamy tylko potrzebne kolumny.
 
 ```r
 lword <- unique(labs[, .(word, v4)])
@@ -425,15 +421,18 @@ lword
 ## 1999: P1999        panel
 ## 2000: P2000       potęga
 ```
+
 Mamy 2k tokenów.
 
 Dodajemy brzmienia tokenów.
 
-
 ```r
 setkey(lword, "word")
 cp_affective <- merge(d3, lword)
-setnames(cp_affective, c("token_id", "respondent_id", "h", "a", "f", "s", "d", "token"))
+setnames(cp_affective,
+         c("token_id", "respondent_id",
+           "h", "a", "f", "s", "d", "token")
+)
 cp_affective
 ```
 
@@ -451,12 +450,13 @@ cp_affective
 ## 244290:     P999          6110 1 1 1 4 1 konieczność
 ## 244291:     P999          6126 4 7 6 4 6 konieczność
 ```
+
 ## Zapisujemy zbiór
 
-
 ```r
-save(cp_affective, file="cp_affective.RData")
+save(cp_affective, file = "cp_affective.RData")
 ```
 
+Zbiór wynikowy w natywnym formacie binarnym ```R``` ma wielkość 1.1Mb.
 
 
