@@ -1,11 +1,10 @@
 ---
 title: "Podsumowanie badania CP Affective"
 subtitle: "Przetwarzanie surowego zbioru danych"
-author: Tomasz Jerzyński date: 2021-02-23 output:
-html_document:
-highlight: "zenburn"
-keep_md: true toc: true toc_float: true editor_options:
-chunk_output_type: inline slug: [c-affective-dataset-summary]
+author: Tomasz Jerzyński
+date: 2021-02-23
+output: html_document
+slug: [c-affective-dataset-summary]
 categories: [Badanie]
 tags: [analiza emocjonalnych, analiza n-gramów, R, sondaż]
 ---
