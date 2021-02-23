@@ -9,7 +9,15 @@ output:
     keep_md: true
     toc: true
     toc_float: true
+editor_options: 
+chunk_output_type: inline
+slug: [c-affective-dataset-summary]
+categories: [Badanie]
+tags: [analiza emocjonalnych, analiza n-gramów, R, sondaż]
 ---
+
+Przetwarzanie i sprawdzenie surowego zbioru danych. Plik tekstowy UTF-16, 
+234.2Mb.
 
 ## Ustawienia i wczytywanie funkcji pomocniczych
 

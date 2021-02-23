@@ -5,7 +5,7 @@ defaultContentLanguage = "pl"
 theme = "terminal"
 paginate = 5
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\\.md$"]
-summaryLength = 20
+summaryLength = 10
 
 [params]
   # dir name of your main content (default is `content/posts`).
