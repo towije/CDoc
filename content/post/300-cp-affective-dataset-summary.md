@@ -14,6 +14,18 @@ Przetwarzanie i sprawdzenie surowego zbioru danych. Plik tekstowy UTF-16,
 
 ## Ustawienia i wczytywanie funkcji pomocniczych
 
+Na początek zmiana UTF-16 na UTF-8. Następnie wczytanie bibliotek.
+
+```r
+library(data.table)
+library(readxl)
+library(stringr)
+source("tonames.R")
+source("fr.R")
+source("ntil.R")
+source("number_formatter.R")
+```
+
 ## Czytanie zbioru
 
 ```r
