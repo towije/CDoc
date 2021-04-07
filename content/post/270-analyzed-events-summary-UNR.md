@@ -25,15 +25,11 @@ Zbiór zawiera całą ramkę czasu.
 
 ### Lista zmiennych
 
+Tylko zmienne, których używamy.
+
+#### Dla symboli
+
 ```
-#  [1,] "id"
-#  [2,] "timestamp"
-#  [3,] "count_symbols"
-#  [4,] "count_symbols_unique"
-#  [5,] "count_symbols_scored"
-#  [6,] "count_symbols_negative"
-#  [7,] "count_symbols_neutral"
-#  [8,] "count_symbols_positive"
 #  [9,] "sum_scores_negative"
 # [10,] "mean_scores_negative"
 # [11,] "mean_weighted_scores_negative"
@@ -46,17 +42,11 @@ Zbiór zawiera całą ramkę czasu.
 # [18,] "mean_scores_positive"
 # [19,] "mean_weighted_scores_positive"
 # [20,] "stdev_scores_positive"
-# [21,] "count_tokens"
-# [22,] "count_tokens_unique"
-# [23,] "count_tokens_scored"
-# [24,] "count_tokens_scored_h"
-# [25,] "count_tokens_scored_a"
-# [26,] "count_tokens_scored_f"
-# [27,] "count_tokens_scored_s"
-# [28,] "count_tokens_scored_d"
-# [29,] "count_tokens_scored_n"
-# [30,] "count_tokens_scored_u"
-# [31,] "count_tokens_profanities"
+```
+
+### Dla słów
+
+```
 # [32,] "sum_distances_h"
 # [33,] "mean_distances_h"
 # [34,] "mean_weighted_distances_h"
@@ -72,6 +62,7 @@ Zbiór zawiera całą ramkę czasu.
 # [44,] "sum_distances_s"
 # [45,] "mean_distances_s"
 ```
+
 ## Symbole
 
 Dla symboli zajmujemy się tylko punktacją.
@@ -148,6 +139,7 @@ rbind(
   st_scores_w_wmeans
 )
 ```
+
 Uśredniamy typy wskaźników ze względu na emocje (średnie kolumnowe).
 Wygrywa kolumna z największą liczbą punktów. Zapamiętujemy jej nazwę i liczbę punktów.
 
@@ -187,6 +179,7 @@ t_dst_sp_n <- prop.table(
     sum(sum_distances_d)
 ) * 100
 ```
+
 #### Wagi dla dystansów
 
 ```r
@@ -209,6 +202,7 @@ t_dst_mp_n <- prop.table(
     weighted.mean(mean_distances_d, tw_d)
 ) * 100
 ```
+
 #### Średnie ważone z dystansów
 
 ```r
