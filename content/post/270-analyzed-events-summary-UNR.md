@@ -8,14 +8,10 @@ categories: [Wyjście]
 tags: [analiza emocjonalnych, postprocessing, R]
 ---
 
+
 ## Opis
 
 Skrypt tworzy wskaźniki dla symboli i tokenów zebranych w wypowiedziach z danego okresu.
-
-- Ver : 1
-- Created by: Tomasz Jerzyński
-- Created on: 23.02.2021, 12:58
-- Updated on: 04.04.2021, 11:41
 
 Skrypt można uprościć, biorąc pod uwagę tylko średnie ważone (pomijając sumy i średnie). Analogicznie jak w przypadku skryptu dla jednej wypowiedzi.
 
@@ -73,7 +69,7 @@ Dla symboli zajmujemy się tylko punktacją.
 
 Wektor z trzema liczbami.
 
-```prop.table``` tworzy liczbowy szereg proporcji powstały na podstawie szeregu liczb. Proporcje zawsze sumują się do 1.
+Funkcja ```prop.table``` tworzy liczbowy szereg proporcji powstały na podstawie szeregu liczb. Proporcje zawsze sumują się do 1.
 
 ```r
 st_scores_pcounts <- prop.table(
@@ -128,9 +124,9 @@ st_scores_w_wmeans <- prop.table(
 
 ### Wskaźnik zagrożenia dla symboli
 
-Macierz 3x3. W kolumnach emocje w wierszach typy wskaźników.
+Macierz 3 × 3. W kolumnach emocje w wierszach typy wskaźników.
 
-```rbind``` łączy wektory traktując je jak kolejne wiersze.
+Funkcja ```rbind``` łączy wektory, traktując je jak kolejne wiersze.
 
 ```r
 rbind(
@@ -158,9 +154,9 @@ symbol_goodness <- rescale(
 
 Na wyjściu dostajemy listę 3 wartości.
 
-1) Nazwę zwycięskiej emocji,
-2) liczbę uzyskanych przez nią punktów,
-3) dobroć oszacowania.
+1) Nazwę zwycięskiej emocji.
+2) Liczbę uzyskanych przez nią punktów.
+3) Dobroć oszacowania.
 
 ## Słowa
 
@@ -217,7 +213,7 @@ t_dst_wmp_n <- prop.table(
 
 ### Wskaźnik zagrożenia dla słów
 
-Macierz 3x5. W kolumnach emocje, w wierszach wskaźniki.
+Macierz 3 × 5. W kolumnach emocje, w wierszach wskaźniki.
 
 ```r
 outt <- rbind(
@@ -252,6 +248,6 @@ token_goodness <- mean(
 
 Na wyjściu dostajemy listę 3 wartości.
 
-1) Nazwę zwycięskiej emocji,
-2) uzyskany przez nią dystans,
-3) dobroć oszacowania.
+1) Nazwę zwycięskiej emocji.
+2) Uzyskany przez nią dystans.
+3) Dobroć oszacowania.
