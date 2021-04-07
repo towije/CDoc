@@ -67,13 +67,13 @@ Tylko zmienne, których używamy.
 
 Dla symboli zajmujemy się tylko punktacją.
 
-### Rozkład sum, średnich i średnich ważonych punktów przypisanych do poszczególnych emocji dla symboli - oceny z punktacji
+### Rozkład sum, średnich i średnich ważonych punktów przypisanych do poszczególnych emocji dla symboli — oceny z punktacji
 
 #### Sumy
 
 Wektor z trzema liczbami.
 
-```prop.table``` tworzy liczbowy szereg proporcji powstały w oparciu o liczbowy szereg liczb. Proporcje zawsze sumują się do 1.
+```prop.table``` tworzy liczbowy szereg proporcji powstały na podstawie szeregu liczb. Proporcje zawsze sumują się do 1.
 
 ```r
 st_scores_pcounts <- prop.table(
@@ -97,9 +97,9 @@ makew <- function(in_vec, ...) {
 #### Waga dla symboli
 
 ```r
-sw_negative = makew(stdev_scores_negative)
-sw_neutral = makew(stdev_scores_neutral)
-sw_positive = makew(stdev_scores_positive)
+sw_negative <- makew(stdev_scores_negative)
+sw_neutral <- makew(stdev_scores_neutral)
+sw_positive <- makew(stdev_scores_positive)
 ```
 
 #### Średnie ważone ze średnich sum punktów
@@ -183,12 +183,12 @@ t_dst_sp_n <- prop.table(
 #### Wagi dla dystansów
 
 ```r
-tw_h = makew(stdev_distances_h)
-tw_a = makew(stdev_distances_a)
-tw_f = makew(stdev_distances_f)
-tw_s = makew(stdev_distances_s)
-tw_d = makew(stdev_distances_d)
-tw_n = makew(stdev_distances_n)
+tw_h <- makew(stdev_distances_h)
+tw_a <- makew(stdev_distances_a)
+tw_f <- makew(stdev_distances_f)
+tw_s <- makew(stdev_distances_s)
+tw_d <- makew(stdev_distances_d)
+tw_n <- makew(stdev_distances_n)
 ```
 
 #### Średnie z dystansów
