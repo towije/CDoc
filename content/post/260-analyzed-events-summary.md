@@ -3,11 +3,10 @@ title: "Wynikowy zbiór danych"
 subtitle: "Podsumowanie przetwarzania"
 author: Tomasz Jerzyński
 date: 2021-02-21
-output:
-    html_document:
-        keep_md: true
-        toc: true
-        toc_float: false
+output: html_document
+toc: true
+categories: [Wyjście]
+tags: [analiza emocjonalnych, postprocessing, R]
 ---
 
 ## Uwagi, ostrzeżenia, pułapki
