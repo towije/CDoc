@@ -8,12 +8,9 @@ categories: [Wyjście]
 tags: [analiza emocjonalnych, postprocessing, R]
 ---
 
-## Dane
-
-
 ## Symbole
 
-### Sprawdzenie czy występują sklasyfikowane symbole
+### Sprawdzenie, czy występują sklasyfikowane symbole
 
 Jeśli nie, to pomijamy tę sekcję i zakładamy zerowy wektor wynikowy.
 
@@ -388,6 +385,8 @@ one_result <- function(one) {
       neutralne = mean_weighted_distances_n,
       negatywne = mean_weighted_distances_neg
     ))]
+    # odwrotność
+    outt <- prop.table(1 - outt)
   } else {
     outt <- c(pozytywne = 0,
               neutralne = 0,
