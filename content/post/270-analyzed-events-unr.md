@@ -1,7 +1,7 @@
 ---
 title: Skrypt oceny wypowiedzi dla ramki czasu
 author: Tomasz Jerzyński
-date: 2021-04-21
+date: 2021-04-07
 output: html_document
 toc: true
 categories: [Wyjście]
