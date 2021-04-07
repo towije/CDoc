@@ -77,8 +77,8 @@ Wektor z trzema liczbami.
 
 ```r
 st_scores_pcounts <- prop.table(
-    sum(sum_scores_negative)
-    sum(sum_scores_neutral)
+    sum(sum_scores_negative),
+    sum(sum_scores_neutral),
     sum(sum_scores_positive)
 ) * 100
 ```
