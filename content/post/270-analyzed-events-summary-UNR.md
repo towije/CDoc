@@ -4,6 +4,8 @@ author: Tomasz Jerzyński
 date: 2021-04-21
 output: html_document
 toc: true
+categories: [Wyjście]
+tags: [analiza emocjonalnych, postprocessing, R]
 ---
 
 ## Opis
@@ -15,7 +17,7 @@ Skrypt tworzy wskaźniki dla symboli i tokenów zebranych w wypowiedziach z dane
 - Created on: 23.02.2021, 12:58
 - Updated on: 04.04.2021, 11:41
 
-Skrypt można uprościć biorąc pod uwagę tylko średnie ważone (pomijając sumy i średnie). Analogicznie jak w przypadku skryptu dla jednej wypowiedzi.
+Skrypt można uprościć, biorąc pod uwagę tylko średnie ważone (pomijając sumy i średnie). Analogicznie jak w przypadku skryptu dla jednej wypowiedzi.
 
 ## Czytanie zbioru
 
