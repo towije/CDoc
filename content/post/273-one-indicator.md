@@ -265,7 +265,7 @@ outt <- prop.table(1 - outt)
 ## 3: negatywne 0.06297082 0.2881244
 ```
 
-![](S:/analizy/CP/250-data-table-analise/273-one-indicator_files/figure-html/unnamed-chunk-19-1.png)<!-- -->
+![f1](/img/273-one-indicator/fig1-1.png)<!-- -->
 
 W przypadku dodania kolejnych systemów ocen, każdy mogłby być prezentowany w postaci kolejnego trójkolorowego paska.
 
@@ -343,7 +343,8 @@ outt
 ## 3: negatywne 0.0617718 0.4243043
 ```
 
-![](S:/analizy/CP/250-data-table-analise/273-one-indicator_files/figure-html/unnamed-chunk-25-1.png)<!-- -->
+![f1](/img/273-one-indicator/fig2-1.png)<!-- -->
+
 
 Jak widać wyniki pełnej i uproszczonej analizy są podobne.
 
