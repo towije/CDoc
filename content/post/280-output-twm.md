@@ -146,4 +146,4 @@ ggplot(outb, aes(x=Emo,y=Pwr, group=1))+
         coord_polar()
 ```
 
-![](C:/Users/towij/Dropbox/TWJ/CP/250-data-table-analise/270-analyzed-events-unr_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
+![Przykład](/img/280-out-twm/out-twm.png)<!-- -->
